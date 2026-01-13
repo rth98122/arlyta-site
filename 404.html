@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>404 — Not Found | Arlyta</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/styles.css" />
+  <meta name="theme-color" content="#fbf8f3" />
+</head>
+
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <main class="wrap">
+    <section class="card" aria-label="404 not found">
+      <div class="header" style="grid-template-columns: 1fr;">
+        <div class="content">
+          <h1>404 — Not Found</h1>
+
+          <p class="subtitle">
+            This page doesn’t exist. It may never have existed.  
+            It may exist only as a machining sketch on a napkin that was lost years ago.
+          </p>
+
+          <div class="pills">
+            <span class="pill">No such URL</span>
+            <span class="pill">No redirect</span>
+            <span class="pill">No tracking</span>
+          </div>
+
+          <div class="actions">
+            <a class="btn primary" href="/" aria-label="Return to homepage">
+              ← Back to arlyta.com
+            </a>
+
+            <a class="btn" href="https://www.linkedin.com/in/robertthebobhoward/"
+               target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+          </div>
+
+          <p class="small" style="margin-top:16px;">
+            If you were expecting something specific here, the fastest way to reach me is via LinkedIn.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div>© <span id="year"></span> Arlyta LLC</div>
+        <div>
+          <a href="/">Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
