@@ -117,17 +117,23 @@
     setPressed("seal");
   });
 
-  // If resume is missing, don't dead-end the user.
-  // (Cloudflare will return 404; we pre-check with a HEAD request.)
-  (async () => {
-    const btn = document.getElementById("resumeBtn");
-    try{
-      const res = await fetch("/resume.pdf", { method: "HEAD" });
-      if(!res.ok) btn.style.display = "none";
-    }catch(e){
-      // If fetch is blocked, just leave it.
+// Show resume button ONLY if a real PDF exists
+(async () => {
+  const btn = document.getElementById("resumeBtn");
+  try {
+    const res = await fetch("/resume.pdf", { cache: "no-store" });
+    const ct = (res.headers.get("content-type") || "").toLowerCase();
+
+    if (res.ok && ct.includes("pdf")) {
+      btn.style.display = "inline-flex";
+    } else {
+      btn.remove();
     }
-  })();
+  } catch {
+    btn.remove();
+  }
+})();
+
 </script>
 </body>
 </html>
