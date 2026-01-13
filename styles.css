@@ -202,3 +202,5 @@ a.btn svg{ width:18px; height:18px; }
   color: var(--muted);
   margin: 0;
 }
+/* Hide resume button unless JS confirms a real PDF exists */
+#resumeBtn { display: none; }
